@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-
+import { ErrorMessageExample } from './Components/ErrorMessageExample';
+import { FieldArrayComp } from './Components/FieldArrayComp';
+import { Navbar } from './Components/Navbar';
+import NewForm from './Components/NewForm';
+import SignupForm from './Components/SignupForm';
+import TwoFactorVerificationForm from './Components/TwoFactorVerificationForm';
+import WithBootstrap from './Components/WithBootstrap';
+import WithMaterialUI from './Components/WithMaterialUI';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Navbar/>
+        <Routes>
+          <Route path='/' element={<SignupForm/>}/>
+          <Route path='/signup' element={<NewForm/>}/>
+          <Route path='/errormessageexample' element={<ErrorMessageExample/>}/>
+          <Route path='/fieldarraycomp' element={<FieldArrayComp/>}/>
+          <Route path='/twostepverificationform' element={<TwoFactorVerificationForm/>}/>
+          <Route path='/withMUI' element={<WithMaterialUI/>}/>
+          <Route path='/withbootstrap' element={<WithBootstrap/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
