@@ -15,6 +15,7 @@ export const Navbar = () => {
                     <li><Link to="/withMUI">Form with Material UI</Link></li>
                     <li><Link to="/withbootstrap">Form with React Bootstrap</Link></li>
                     <li><Link to="/twostepverificationform">2 factor Auth</Link></li>
+                    <li><Link to="/Createpackage">Create Package</Link></li>
                 </ul>
             </div>
         </div>

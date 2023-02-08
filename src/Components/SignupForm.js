@@ -43,7 +43,7 @@ const validate = values => {
 const SignupForm = () => {
   const formik = useFormik({
     initialValues: { email: "", firstName: '', lastName: "", password:"", confirmPassword:""},
-    
+    validate,
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
       console.log(values)

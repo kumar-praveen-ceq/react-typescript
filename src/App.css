@@ -686,3 +686,8 @@ label.checkbox {
 button[type="submit"] {
   margin-top: 1rem;
 }
+
+
+.create_program_form{
+  margin: 10px 0px;
+}

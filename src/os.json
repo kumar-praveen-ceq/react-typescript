@@ -1,0 +1,56 @@
+[
+  {
+    "id":"All Windows XP (32 bit)"
+  },
+  {
+    "id":"All Windows 8.1 (64-bit)"
+  },
+  {
+    "id":"All Embedded Windows XP"
+  },
+  {
+    "id":"All Windows 10 (32-bit)"
+  },
+  {
+    "id":"All Windows 7 (32-bit)"
+  },
+  {
+    "id":"All Windows 10 (64-bit)"
+  },
+  {
+    "id":"All Windows 7 (64-bit)"
+  },
+  {
+    "id":"All Windows Server 2008 (64-bit)"
+  },
+  {
+    "id":"Embedded Windows 7 (32-bit)"
+  },
+  {
+    "id":"All Windows Server 2008 R2 (64-bit)"
+  },
+  {
+    "id":"Embedded Windows 7 (64-bit)"
+  },
+  {
+    "id":"All Windows Server 2012 (64-bit)"
+  },
+  {
+    "id":"All Windows 8 (32-bit)"
+  },
+  {
+    "id":"All Windows Server 2012 R2 (64-bit)"
+  },
+  {
+    "id":"All Windows 8 (64-bit)"
+  },
+  {
+    "id":"All Windows Server 2016 (64-bit)"
+  },
+  {
+    "id":"All Windows 8.1 (32-bit)"
+  },
+  {
+    "id":"All Windows Server 2019 (64-bit)"
+  }
+]

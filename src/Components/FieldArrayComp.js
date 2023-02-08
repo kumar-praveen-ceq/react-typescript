@@ -24,9 +24,11 @@ export const FieldArrayComp = () => {
             render={arrayHelpers => (
               <div>
                 {values.friends && values.friends.length > 0 ? (
-                  values.friends.map((friend, index) => (
+                  values.friends.map((friend, index) =>{ 
+                    console.log("friend",friend,'\n','index',values.friends[index])
+                    return (
                     <div key={index}>
-                      <Field name={`friends.${index}`} />
+                      <Field name={`friends.${index}`} values={friend} />
 
                       <button
                         type="button"
@@ -41,7 +43,7 @@ export const FieldArrayComp = () => {
                         +
                       </button>
                     </div>
-                  ))
+                  )})
                 ) : (
                   <button type="button" onClick={() => arrayHelpers.push('')}>
                     {/* show this when user has removed all friends from the list */}
