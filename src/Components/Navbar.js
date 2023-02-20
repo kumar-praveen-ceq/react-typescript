@@ -16,6 +16,7 @@ export const Navbar = () => {
                     <li><Link to="/withbootstrap">Form with React Bootstrap</Link></li>
                     <li><Link to="/twostepverificationform">2 factor Auth</Link></li>
                     <li><Link to="/Createpackage">Create Package</Link></li>
+                    <li><Link to="/createform">Create form</Link></li>
                 </ul>
             </div>
         </div>

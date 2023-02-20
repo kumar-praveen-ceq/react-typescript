@@ -691,3 +691,15 @@ button[type="submit"] {
 .create_program_form{
   margin: 10px 0px;
 }
+
+
+.custom-select {
+  margin-bottom: 1rem;
+  max-width: 25rem;
+  color: black;
+}
+
+.custom-select select option {
+  color: black !important;
+  
+}

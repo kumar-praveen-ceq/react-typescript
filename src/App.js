@@ -10,6 +10,7 @@ import TwoFactorVerificationForm from './Components/TwoFactorVerificationForm';
 import WithBootstrap from './Components/WithBootstrap';
 import WithMaterialUI from './Components/WithMaterialUI';
 import FieldArraObj from './Components/FieldArraObj';
+import CreateForm from './Components/CreateForm';
 function App() {
   return (
     <div className="App">
@@ -25,6 +26,7 @@ function App() {
           <Route path='/withMUI' element={<WithMaterialUI/>}/>
           <Route path='/withbootstrap' element={<WithBootstrap/>}/>
           <Route path='/Createpackage' element={<Createpackage/>}/>
+          <Route path='/createform' element={<CreateForm/>}/>
         </Routes>
       </BrowserRouter>
     </div>

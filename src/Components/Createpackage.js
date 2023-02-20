@@ -1,9 +1,9 @@
 // import axios from 'axios';
-import {  FieldArray, Form, Formik, useField } from 'formik';
+import { Field, FieldArray, Form, Formik, useField } from 'formik';
 // import React, { useEffect, useState } from 'react'
 import * as Yup from 'yup';
 import osJson from "../os.json"
-// import CustomSelect from './CustomSelect';
+import CustomSelect from './CustomSelect';
 const FriendArrayErrors = errors =>
 typeof errors.create_program === 'string' ? <div>{errors.create_program}</div> : null;
 
@@ -66,6 +66,7 @@ const Createpackage = () => {
             operating_system: '',
             create_program: [{ name_of_program: '', command_line: '' }],
           }}
+
           validationSchema={Yup.object({
             country_code: Yup.string()
               .required("Country Code is Required"),
@@ -77,14 +78,26 @@ const Createpackage = () => {
               .required(),
             functionality_description: Yup.string()
               .required(),
-            operating_system: Yup.string()
-              .required(),
-            create_program: Yup.array()
-            .of(
+            operating_system: Yup.array().required() || Yup.string().required(),
+            create_program: Yup.array().of(
               Yup.object().shape({
-                name_of_program: Yup.string().required('Required'), // these constraints take precedence
-                command_line: Yup.string().required('Required') // these constraints take precedence
-              }))
+                name_of_program: Yup.string()
+                  .required("Name of program is required")
+                  .test(
+                    "unique",
+                    "Program names must be unique",
+                    function (value) {
+                      const { create_program } = this.parent;
+                      return !create_program.some(
+                        (program) =>
+                          program.name_of_program === value &&
+                          program !== this.parent[this.path]
+                      );
+                    }
+                  ),
+                command_line: Yup.string().required("Command line is required"),
+              })
+            ),
           })}
           onSubmit={(values) => {
             alert(JSON.stringify(values, null, 2))
@@ -131,22 +144,22 @@ const Createpackage = () => {
                 type="text"
                 placeholder="Functionality Description"
               />
-              <MySelect
+              {/* <MySelect
                 label='Operating System' name="operating_system">
                 <option value=''>Select</option>
-                {osJson.map(({ id }) => {
-                  return (<option value={id} key={id}>{id}</option>)
+                {osJson.map(({ label }) => {
+                  return (<option value={label} key={label}>{label}</option>)
                 })}
-              </MySelect>
-
-              {/* <Field
+              </MySelect> */}
+        <label>Operating Systems</label>
+              <Field
         className="custom-select"
         name="operating_system"
         options={osJson}
         component={CustomSelect}
         placeholder="Select Operating System"
         isMulti={true}
-      /> */}
+      />
               <div>
                 <h4>Create Additional Program</h4>
                 <FieldArray
